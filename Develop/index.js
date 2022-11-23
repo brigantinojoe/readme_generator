@@ -54,6 +54,9 @@ const questions = [{
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) { }
 inquirer.prompt(questions).then((data) => {
+    if (data.license === "None") {
+        
+    }
     const template = `
 # ${data.title.trim()}
 ![GitHub license](https://img.shields.io/badge/license-${data.license.replace(" ","%20")}-blue.svg)
