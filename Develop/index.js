@@ -55,14 +55,58 @@ const questions = [{
 // function writeToFile(fileName, data) { }
 inquirer.prompt(questions).then((data) => {
     if (data.license === "None") {
-        
-    }
-    const template = `
+        var template = `
 # ${data.title.trim()}
-![GitHub license](https://img.shields.io/badge/license-${data.license.replace(" ","%20")}-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-${data.license.replace(" ", "%20")}-blue.svg)
 
 ## Description
 ${data.description.trim()}
+
+## Table of Contents 
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+\`\`\`
+${data.installation.trim()}
+\`\`\`
+
+## Usage
+${data.usage.trim()}
+
+## Contributing
+${data.contribution.trim()}
+
+## Tests
+To run tests, run the following command:
+\`\`\`
+${data.tests.trim()}
+\`\`\`
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at ${data.email.trim()}. You can find more of my work at [${data.username.trim()}](https://github.com/${data.username.trim()}).
+`
+    }
+    else {
+        var template = `
+# ${data.title.trim()}
+![GitHub license](https://img.shields.io/badge/license-${data.license.replace(" ", "%20")}-blue.svg)
+
+## Description
+${data.description.trim()}
+
 ## Table of Contents 
 
 * [Installation](#installation)
@@ -104,10 +148,12 @@ ${data.tests.trim()}
 
 If you have any questions about the repo, open an issue or contact me directly at ${data.email.trim()}. You can find more of my work at [${data.username.trim()}](https://github.com/${data.username.trim()}).
 `
+    }
+
 
     fs.writeFile("./README.md", template, (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
-      });
+    });
     console.log(data);
 });
