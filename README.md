@@ -17,10 +17,8 @@ Please follow the instructions below
     node index.js
     ```
 2. Answer the prompts initiated by the previous command.
-3.
+3. Once completed, the terminal will indicate that the new README file has been saved like in the screenshot below:
 
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![Final](./Assets/images/final.jpg)
+
+4. Navigate to your "Develop" directory and enjoy your new README!
